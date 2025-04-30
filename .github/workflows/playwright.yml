@@ -16,7 +16,7 @@ jobs:
     - name: Install dependencies
       run: npm ci
     - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
+      run: npx playwright install
     - name: Run Playwright tests
       run: npx playwright test
     - name: Read package.json
@@ -24,8 +24,6 @@ jobs:
       uses: juliangruber/read-file-action@v1
       with:
         path: ./test-results/report.json
-    - name: Echo report.json
-      run: echo "${{ steps.report.outputs.content }}";
     - name: Echo stats
       run: echo "${{ fromJSON(steps.report.outputs.content).stats.expected }}"
     - uses: actions/upload-artifact@v4
