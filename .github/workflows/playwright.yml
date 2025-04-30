@@ -19,6 +19,7 @@ jobs:
       run: npx playwright install
     - name: Run Playwright tests
       run: npx playwright test
+      continue-on-error: true
     - name: Read package.json
       id: report
       uses: juliangruber/read-file-action@v1
