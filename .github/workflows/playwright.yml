@@ -25,7 +25,9 @@ jobs:
       with:
         path: ./test-results/report.json
     - name: Echo report.json
-      run: echo "${{ steps.report.outputs.content }}"; echo "${{ steps.report.outputs.content.stats.expected }}"
+      run: echo "${{ steps.report.outputs.content }}";
+    - name: Echo stats
+      run: echo "${{ fromJSON(steps.report.outputs.content).stats.expected }}"
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
