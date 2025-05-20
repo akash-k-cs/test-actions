@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "npx playwright test"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/akash-k-cs/test-actions.git"
@@ -16,6 +18,10 @@
   "homepage": "https://github.com/akash-k-cs/test-actions#readme",
   "devDependencies": {
     "@playwright/test": "^1.52.0",
-    "@types/node": "^22.15.3"
+    "@types/node": "^22.15.3",
+    "chokidar": "^4.0.3"
+  },
+  "dependencies": {
+    "proper-lockfile": "^4.1.2"
   }
 }

@@ -5,3 +5,8 @@ node_modules/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+/sheets/
+/src/
+config_usage.json
+runner.log
+.DS_Store

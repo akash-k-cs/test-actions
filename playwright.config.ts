@@ -12,7 +12,7 @@ import { defineConfig, devices } from '@playwright/test';
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  testDir: './tests',
+  testDir: "./tests",
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -38,46 +38,54 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
+    { name: "teardown", testMatch: 'teardown.ts' },
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      name: "SUITE1",
+      testMatch: "example1.spec.ts",
+      use: {
+        browserName: "chromium",
+      },
+      teardown: 'teardown',
     },
-
-    // {
-    //   name: 'firefox',
-    //   use: { ...devices['Desktop Firefox'] },
-    // },
-
-    // {
-    //   name: 'webkit',
-    //   use: { ...devices['Desktop Safari'] },
-    // },
-
-    /* Test against mobile viewports. */
-    // {
-    //   name: 'Mobile Chrome',
-    //   use: { ...devices['Pixel 5'] },
-    // },
-    // {
-    //   name: 'Mobile Safari',
-    //   use: { ...devices['iPhone 12'] },
-    // },
-
-    /* Test against branded browsers. */
-    // {
-    //   name: 'Microsoft Edge',
-    //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
-    // },
-    // {
-    //   name: 'Google Chrome',
-    //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
-    // },
-  ],
-
-  /* Run your local dev server before starting the tests */
-  // webServer: {
-  //   command: 'npm run start',
-  //   url: 'http://127.0.0.1:3000',
-  //   reuseExistingServer: !process.env.CI,
-  // },
+    {
+      name: "SUITE2",
+      testMatch: "example2.spec.ts",
+      use: {
+        browserName: "chromium",
+      },
+      teardown: 'teardown',
+    },
+    {
+      name: "SUITE3",
+      testMatch: "example3.spec.ts",
+      use: {
+        browserName: "chromium",
+      },
+      teardown: 'teardown',
+    },
+    {
+      name: "SUITE4",
+      testMatch: "example4.spec.ts",
+      use: {
+        browserName: "chromium",
+      },
+      teardown: 'teardown',
+    },
+    {
+      name: "SUITE5",
+      testMatch: "example5.spec.ts",
+      use: {
+        browserName: "chromium",
+      },
+      teardown: 'teardown',
+    },
+    {
+      name: "SUITE6",
+      testMatch: "example6.spec.ts",
+      use: {
+        browserName: "chromium",
+      },
+      teardown: 'teardown',
+    },
+  ]
 });
