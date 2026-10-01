@@ -1,0 +1,9 @@
+Self-Hosted MCP Servers
+
+The Model Context Protocol (MCP) is an open standard that lets AI assistants connect to external tools, data sources, and services through a consistent interface. An MCP server exposes capabilities such as tools, resources, and prompts, while an MCP client, usually an AI application, discovers and calls them.
+
+A self-hosted MCP server is one that an organization runs on its own infrastructure instead of relying on a third-party hosted service. This approach offers several advantages. First, data stays within the organization's network, which helps meet security, privacy, and compliance requirements. Second, teams have full control over which tools are exposed, how authentication works, and which repositories, projects, or channels the AI may access. Allowlists, audit logging, and rate limiting can be enforced centrally at a gateway.
+
+Self-hosted servers can run as containers on Kubernetes, as virtual machines, or behind an internal API gateway. They commonly communicate over HTTP with streaming support, and integrate with existing identity providers using OAuth or token-based credentials.
+
+The trade-offs include operational overhead: the team is responsible for upgrades, monitoring, scaling, and incident response. However, for enterprises that need tight governance over how AI agents interact with internal systems such as GitHub, Jira, Confluence, or Slack, a self-hosted MCP server provides a secure, auditable, and customizable foundation for AI-assisted workflows.
